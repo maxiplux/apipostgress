@@ -19,7 +19,7 @@ before_install:
 
 script:
 #- ./mvnv verify -B
-- ./mvn  verify
+- ./mvnw  verify
 #- ./mvnw clean install -B
 
 #sudo: required
