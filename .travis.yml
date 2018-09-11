@@ -5,7 +5,7 @@ jdk: oraclejdk9
 services:
 - postgresql
 
-  
+
 addons:
   hosts:
   - postgres
