@@ -1,10 +1,18 @@
 language: java
-jdk: oraclejdk8
 
-sudo: required
+jdk:
+- oraclejdk8
 
-services:
-- docker
+before_install:
+- sed -i.bak -e 's|https://nexus.codehaus.org/snapshots/|https://oss.sonatype.org/content/repositories/codehaus-snapshots/|g' ~/.m2/settings.xml
 
-script:
-- ./mvnw clean install -B
+script: ./mvnw clean verify -P${PROFILE:-ci}
+
+cache:
+  directories:
+  - '$HOME/.m2/repository'
+
+#sudo: required
+#services:
+#- docker
+
