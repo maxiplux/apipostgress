@@ -18,7 +18,7 @@ before_install:
 
 
 script:
-- ./mvn verify -B
+- ./mvnv verify -B
 #- ./mvnw clean verify
 #- ./mvnw clean install -B
 
