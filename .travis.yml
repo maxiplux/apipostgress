@@ -16,6 +16,10 @@ addons:
 before_install:
 - chmod a+x ./mvnw
 
+deploy:
+  provider: heroku
+  api_key: d03167db-253d-42b0-81e5-67dee90de1ca
+  app: apipostgress
 
 script:
 #- ./mvnv verify -B
