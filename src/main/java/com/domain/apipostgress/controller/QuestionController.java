@@ -64,7 +64,7 @@ public class QuestionController {
             answers.stream().map(answer -> {
                 answer.setQuestion(questionFinal);
                 return answerRepository.save(answer);
-            });
+            }).collect(Collectors.toList());
             return questionFinal;
         }).collect(Collectors.toList());
 
