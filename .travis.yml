@@ -35,6 +35,7 @@ script:
 - ./mvnw clean verify install -B
 - sonar-scanner
 
+
 #sudo: required
 #services:
 #- docker
