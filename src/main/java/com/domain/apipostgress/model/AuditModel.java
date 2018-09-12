@@ -5,10 +5,12 @@ package com.domain.apipostgress.model;
  * Date: 09/09/2018
  * Time: 4:14
  */
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
@@ -33,6 +35,9 @@ public abstract class AuditModel implements Serializable {
     // Getters and Setters (Omitted for brevity)
 
 
+    public AuditModel() {
+    }
+
     public Date getCreatedAt() {
         return createdAt;
     }
@@ -47,8 +52,5 @@ public abstract class AuditModel implements Serializable {
 
     public void setUpdatedAt(Date updatedAt) {
         this.updatedAt = updatedAt;
-    }
-
-    public AuditModel() {
     }
 }

@@ -18,10 +18,10 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
 import javax.validation.Valid;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.stream.Collectors;
 
 @RestController
@@ -47,64 +47,54 @@ public class QuestionController {
     }
 
     @GetMapping("/questions/{questionId}")
-    public Question getQuestion(@PathVariable Long questionId)
-    {
+    public Question getQuestion(@PathVariable Long questionId) {
         return questionRepository.findById(questionId).orElseThrow(() -> new ResourceNotFoundException("Question not found with id " + questionId));
 
     }
 
 
-
     @PostMapping("/questions/bulk")
-    public List<Question> createQuestion(@Valid @RequestBody  HashMap<Question, List<Answer>> questions)
-    {
+    public List<Question> createQuestion(@Valid @RequestBody HashMap<Question, List<Answer>> questions) {
 
 
-
-        return questions.entrySet().stream().map(question->
+        return questions.entrySet().stream().map(question ->
         {
-            Question questionFinal= questionRepository.save(question.getKey());
-                    List<Answer> answers = question.getValue();
-                    answers.stream().map(answer -> {
-                        answer.setQuestion(questionFinal);
-                        return answerRepository.save(answer);
-                    });
-                    return questionFinal;
-        }).collect(Collectors.toList());
-
-    }
-    @PostMapping("/questions/bulk2")
-    public Question createQuestion(@Valid @RequestBody Maper maper)
-    {
-
-
-
-
-            Question questionFinal= questionRepository.save(maper.getQuestion());
-            this.questionRepository.save(questionFinal);
-            List<Answer> answers = maper.getQuestions();
+            Question questionFinal = questionRepository.save(question.getKey());
+            List<Answer> answers = question.getValue();
             answers.stream().map(answer -> {
                 answer.setQuestion(questionFinal);
                 return answerRepository.save(answer);
             });
             return questionFinal;
+        }).collect(Collectors.toList());
 
+    }
+
+    @PostMapping("/questions/bulk2")
+    public Question createQuestion(@Valid @RequestBody Maper maper) {
+
+
+        Question questionFinal = questionRepository.save(maper.getQuestion());
+        this.questionRepository.save(questionFinal);
+        List<Answer> answers = maper.getQuestions();
+        answers.stream().map(answer -> {
+            answer.setQuestion(questionFinal);
+            return answerRepository.save(answer);
+        });
+        return questionFinal;
 
 
     }
 
     @PostMapping("/questions/bulk3")
-    public List<Question> createQuestion(@Valid @RequestBody List<Pair<Question,List<Answer>>> questions)
-    {
+    public List<Question> createQuestion(@Valid @RequestBody List<Pair<Question, List<Answer>>> questions) {
 
 
-        return        questions.stream().map(question -> {
+        return questions.stream().map(question -> {
             Question questionaFinal = this.questionRepository.save(question.getKey());
-            question.getValue().stream().map(answer -> answer.setQuestion(questionaFinal) ).map(answer-> this.answerRepository.save(answer) );
+            question.getValue().stream().map(answer -> answer.setQuestion(questionaFinal)).map(answer -> this.answerRepository.save(answer));
             return questionaFinal;
-        } ).collect(Collectors.toList());
-
-
+        }).collect(Collectors.toList());
 
 
     }

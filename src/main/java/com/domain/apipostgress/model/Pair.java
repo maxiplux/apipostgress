@@ -5,6 +5,7 @@ package com.domain.apipostgress.model;
  * Date: 10/09/2018
  * Time: 12:04
  */
+
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -23,7 +24,7 @@ public class Pair<K, V> {
 
 
     public boolean equals(Object o) {
-        return o instanceof Pair && Objects.equals(key, ((Pair<?,?>)o).key) && Objects.equals(value, ((Pair<?,?>)o).value);
+        return o instanceof Pair && Objects.equals(key, ((Pair<?, ?>) o).key) && Objects.equals(value, ((Pair<?, ?>) o).value);
     }
 
     public int hashCode() {

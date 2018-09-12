@@ -9,6 +9,7 @@ package com.domain.apipostgress.repository;
 import com.domain.apipostgress.model.Answer;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+
 import java.util.List;
 
 @Repository

@@ -18,7 +18,7 @@ before_install:
 
 deploy:
   provider: heroku
-  api_key: d03167db-253d-42b0-81e5-67dee90de1ca
+  api_key: $HEROKU_API_KEY
   app: apipostgress
 
 script:

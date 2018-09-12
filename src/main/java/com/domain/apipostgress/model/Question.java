@@ -5,6 +5,7 @@ package com.domain.apipostgress.model;
  * Date: 09/09/2018
  * Time: 4:16
  */
+
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;

@@ -18,7 +18,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.reactive.server.WebTestClient;
 import reactor.core.publisher.Mono;
 
-
 import java.util.Collections;
 
 @RunWith(SpringRunner.class)
@@ -34,7 +33,7 @@ public class QuestionTestApplicationTests {
 
     @Test
     public void testCreateQuestion() {
-        Question tweet = new Question("Que vida mas hermosa","Que vida mas hermosa");
+        Question tweet = new Question("Que vida mas hermosa", "Que vida mas hermosa");
 
         webTestClient.post().uri("/questions")
                 .contentType(MediaType.APPLICATION_JSON_UTF8)
@@ -62,7 +61,7 @@ public class QuestionTestApplicationTests {
     @Test
     public void testGetSingleQuestion() {
 
-        Question tweet =this.questionRepository.save(new Question("Que vida mas hermosa 2","Que vida mas hermosa 2 "));
+        Question tweet = this.questionRepository.save(new Question("Que vida mas hermosa 2", "Que vida mas hermosa 2 "));
 
         webTestClient.get()
                 .uri("/questions/{questionId}", Collections.singletonMap("questionId", tweet.getId()))
@@ -76,8 +75,8 @@ public class QuestionTestApplicationTests {
     @Test
     public void testUpdateQuestion() {
 
-        Question tweet =this.questionRepository.save(new Question("Que vida mas hermosa","Que vida mas hermosa"));
-        Question newTweetData = new Question("Que vida mas hermosa 3","Que vida mas hermosa 3");
+        Question tweet = this.questionRepository.save(new Question("Que vida mas hermosa", "Que vida mas hermosa"));
+        Question newTweetData = new Question("Que vida mas hermosa 3", "Que vida mas hermosa 3");
 
         webTestClient.put()
                 .uri("/questions/{id}", Collections.singletonMap("id", tweet.getId()))
@@ -94,10 +93,10 @@ public class QuestionTestApplicationTests {
     @Test
     public void testDeleteQuestion() {
 
-        Question tweet =this.questionRepository.save(new Question("Que vida mas hermosa delete","Que vida mas hermosa delete"));
+        Question tweet = this.questionRepository.save(new Question("Que vida mas hermosa delete", "Que vida mas hermosa delete"));
 
         webTestClient.delete()
-                .uri("/questions/{id}", Collections.singletonMap("id",  tweet.getId()))
+                .uri("/questions/{id}", Collections.singletonMap("id", tweet.getId()))
                 .exchange()
                 .expectStatus().isOk();
     }

@@ -1,7 +1,6 @@
 package com.domain.apipostgress.model;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -10,7 +9,7 @@ import java.util.List;
  * Time: 10:17
  */
 public class Maper {
-    Question question ;
+    Question question;
     List<Answer> questions = new ArrayList<>();
 
     public Maper(Question question, List<Answer> questions) {

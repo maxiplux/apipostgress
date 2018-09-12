@@ -4,17 +4,17 @@ services:
     build: .
     container_name: apipostgress
     volumes:
-      - ./composeexample:/code
+    - ./composeexample:/code
     ports:
-      - "8080:8080"
+    - "8080:8080"
     links:
-      - postgres
+    - postgres
     depends_on:
-      - postgres
+    - postgres
   postgres:
     image: postgres
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
 volumes:
-    dbdata:
+  dbdata:

@@ -5,11 +5,12 @@ package com.domain.apipostgress.model;
  * Date: 09/09/2018
  * Time: 4:17
  */
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import javax.persistence.*;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
-import org.springframework.boot.autoconfigure.web.ResourceProperties;
+
+import javax.persistence.*;
 
 @Entity
 @Table(name = "answers")
