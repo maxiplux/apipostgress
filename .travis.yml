@@ -33,6 +33,7 @@ script:
 #- ./mvnv verify -B
 #- ./mvnw  verify
 - ./mvnw clean verify install -B
+- sonar-scanner
 
 #sudo: required
 #services:
