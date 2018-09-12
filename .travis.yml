@@ -7,7 +7,14 @@ services:
 - postgresql
 
 
+
+
 addons:
+  sonarcloud:
+    organization: "SONAR" # the key of the org you chose at step #3
+    token:
+      secure: $SONAR_KEY # encrypted value of your token
+
   hosts:
   - postgres
   apt:
