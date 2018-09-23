@@ -22,10 +22,15 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.util.HashMap;
 import java.util.List;
+import java.util.logging.Logger;
 import java.util.stream.Collectors;
+
+import org.apache.logging.log4j.LogManager;
 
 @RestController
 public class QuestionController {
+
+    //private final Logger logger = LogManager.getLogger(this.getClass());
 
     @Autowired
     private QuestionRepository questionRepository;
@@ -35,7 +40,10 @@ public class QuestionController {
 
     @GetMapping("/questions")
     public Page<Question> getQuestions(Pageable pageable) {
+
+        //logger.info("Esto es una prueba");
         return questionRepository.findAll(pageable);
+
     }
 
 
