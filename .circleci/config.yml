@@ -12,7 +12,6 @@ jobs:
           POSTGRES_DB: postgres
 
     steps:
-
       - checkout
       - run: mvn test
       - store_artifacts:
