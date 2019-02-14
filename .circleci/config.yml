@@ -18,4 +18,4 @@ jobs:
           command: |
             psql -h 127.0.0.1 -U postgres -c "CREATE DATABASE databasename;"
             psql -h 127.0.0.1 -U postgres -c "CREATE USER username WITH PASSWORD 'postgresql'; GRANT ALL PRIVILEGES ON DATABASE postgresql TO postgresql;"
-- run: mvn test
+run: mvn test
