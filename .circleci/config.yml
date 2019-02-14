@@ -14,5 +14,5 @@ jobs:
     steps:
       - checkout
 
-      - run: - - chmod a+x ./mvnw
-      - run: - ./mvnw clean verify install -B
+      - run: chmod a+x ./mvnw
+      - run: ./mvnw clean verify install -B
