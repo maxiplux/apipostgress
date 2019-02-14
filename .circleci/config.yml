@@ -13,6 +13,6 @@ jobs:
 
     steps:
       - checkout
-      - run: mvn test
-      - store_artifacts:
-          path: target/apipostgress-SNAPSHOT.jar
+
+      - run: - - chmod a+x ./mvnw
+      - run: - ./mvnw clean verify install -B
