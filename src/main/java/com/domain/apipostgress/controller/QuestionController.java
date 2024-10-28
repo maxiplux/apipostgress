@@ -43,7 +43,7 @@ public class QuestionController {
     public String version() {
 
         //logger.info("Esto es una prueba");
-        return "SUN27959PM";
+        return "271001";
 
     }
 
