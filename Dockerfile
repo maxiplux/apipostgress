@@ -32,3 +32,4 @@ COPY --from=build /app/target/apipostgress-0.0.1.jar /apipostgress-0.0.1.jar
 
 # Run the jar file
 ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/apipostgress-0.0.1.jar"]
+#docker buildx build --platform linux/amd64,linux/arm64 -t maxiplux/api-pg-prometheus:1.0.0 --push .

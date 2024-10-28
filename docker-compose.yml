@@ -3,6 +3,13 @@ services:
   web:
     build: .
     container_name: apipostgress
+    environment:
+      PGHOST: postgres
+      PGPORT: 5432
+      PGPASSWORD: postgres
+      PGUSER: postgres
+      PGDATABASE: postgres
+
     volumes:
     - ./composeexample:/code
     ports:
