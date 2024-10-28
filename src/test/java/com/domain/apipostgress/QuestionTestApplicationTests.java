@@ -9,7 +9,6 @@ package com.domain.apipostgress;
 import com.domain.apipostgress.model.Question;
 import com.domain.apipostgress.repository.QuestionRepository;
 import org.assertj.core.api.Assertions;
-
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

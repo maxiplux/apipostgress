@@ -4,7 +4,7 @@ dist: trusty
 jdk: oraclejdk11
 
 services:
-- postgresql
+  - postgresql
 
 
 
@@ -16,12 +16,12 @@ addons:
       secure: $SONAR_KEY # encrypted value of your token
 
   hosts:
-  - postgres
+    - postgres
   apt:
     packages:
-    - oracle-java11-installer
+      - oracle-java11-installer
 before_install:
-- chmod a+x ./mvnw
+  - chmod a+x ./mvnw
 
 deploy:
   provider: heroku
@@ -30,10 +30,10 @@ deploy:
   app: apipostgress
 
 script:
-#- ./mvnv verify -B
-#- ./mvnw  verify
-- ./mvnw clean verify install -B
-- sonar-scanner
+  #- ./mvnv verify -B
+  #- ./mvnw  verify
+  - ./mvnw clean verify install -B
+  - sonar-scanner
 #mvn sonar:sonar   -Dsonar.projectKey=maxiplux_apipostgress   -Dsonar.organization=maxiplux-github   -Dsonar.host.url=https://sonarcloud.io   -Dsonar.login=b7cc5e383086fedd5b328a68e293a7c28d5bce1e
 
 #sudo: required

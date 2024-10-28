@@ -7,10 +7,7 @@ package com.domain.apipostgress.config;
  */
 
 
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-
-import java.util.function.Predicate;
 
 
 @Configuration

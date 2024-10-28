@@ -19,16 +19,14 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.HashMap;
 import java.util.List;
-import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
-import org.apache.logging.log4j.LogManager;
-
-import javax.validation.Valid;
-
 @RestController
+@CrossOrigin(origins = "*", allowedHeaders = "*", methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE, RequestMethod.OPTIONS})
+
 public class QuestionController {
 
     //private final Logger logger = LogManager.getLogger(this.getClass());
@@ -43,7 +41,7 @@ public class QuestionController {
     public String version() {
 
         //logger.info("Esto es una prueba");
-        return "271001";
+        return "271104";
 
     }
 
