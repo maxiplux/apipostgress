@@ -3,7 +3,7 @@ FROM openjdk:11-jdk-alpine
 # Add Maintainer Info
 MAINTAINER Juan Francisco <maxiplux@gmail.com>
 # Add a volume pointing to /tmp
-VOLUME /tmp
+#VOLUME /tmp
 # Make port 8080 available to the world outside this container
 EXPOSE 8080
 # The application's jar file
