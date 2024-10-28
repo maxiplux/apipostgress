@@ -39,6 +39,14 @@ public class QuestionController {
     @Autowired
     private AnswerRepository answerRepository;
 
+    @GetMapping("/version")
+    public String version() {
+
+        //logger.info("Esto es una prueba");
+        return "SUN27959PM";
+
+    }
+
     @GetMapping("/questions")
     public Page<Question> getQuestions(Pageable pageable) {
 
