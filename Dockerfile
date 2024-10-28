@@ -25,11 +25,7 @@ LABEL maintainer="Juan Francisco <maxiplux@gmail.com>"
 EXPOSE 8080
 
 # Set environment variables for Postgres (these will be passed during deployment)
-ENV PGHOST=${PGHOST}
-ENV PGPORT=${PGPORT}
-ENV PGDATABASE=${PGDATABASE}
-ENV PGUSER=${PGUSER}
-ENV PGPASSWORD=${PGPASSWORD}
+
 
 # Copy the packaged jar from the build stage
 COPY --from=build /app/target/apipostgress-0.0.1.jar /apipostgress-0.0.1.jar
