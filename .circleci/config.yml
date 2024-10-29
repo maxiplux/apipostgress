@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     
-    working_directory: ~/apipostgress-spring 
+    working_directory: ~/apipostgress-spring
 
     docker:
       - image: circleci/openjdk:9-jdk

@@ -22,12 +22,11 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.util.HashMap;
 import java.util.List;
-import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
-import org.apache.logging.log4j.LogManager;
-
 @RestController
+@CrossOrigin(origins = "*", allowedHeaders = "*", methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE, RequestMethod.OPTIONS})
+
 public class QuestionController {
 
     //private final Logger logger = LogManager.getLogger(this.getClass());
@@ -37,6 +36,14 @@ public class QuestionController {
 
     @Autowired
     private AnswerRepository answerRepository;
+
+    @GetMapping("/version")
+    public String version() {
+
+        //logger.info("Esto es una prueba");
+        return "271142";
+
+    }
 
     @GetMapping("/questions")
     public Page<Question> getQuestions(Pageable pageable) {
